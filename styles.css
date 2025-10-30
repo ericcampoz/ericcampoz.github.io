@@ -1,60 +1,44 @@
-body {
-  background: lightblue;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 40px;
-}
-
-h1 {
-  color: navy;
-  text-align: center;
-}
-
-.about {
-  background: #00b3d1;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* ---- PROJECT LAYOUT ---- */
+/* ===== Project Section Layout ===== */
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  /* 2-column grid by default; the problem statement will span both columns */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: start;
 }
 
-/* Each project card */
+/* Section title a touch smaller, tighter */
+.projects > h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+/* Project card base */
 .project {
   background: white;
-  padding: 15px;
-  width: 300px;
+  padding: 16px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease-in-out;
 }
 
-/* Make the PROBLEM STATEMENT card wider */
-#problem {
-  width: 600px;    /* wider card */
-  max-width: 90%;  /* stays responsive */
-}
+/* Hover polish (unique to you) */
+.project:hover { transform: scale(1.02); }
 
-/* Hover effect */
-.project:hover {
-  transform: scale(1.03);
-}
-
-/* Title */
+/* Card title */
 .project h3 {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 6px 0 10px;
   color: navy;
 }
 
-/* Image (standardized) */
+/* Image defaults for the smaller cards (square-ish) */
 .project img {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 1 / 1;      /* uniform square look */
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid rgb(126, 14, 201);
@@ -62,16 +46,42 @@ h1 {
   margin: 0 auto;
 }
 
-/* Text inside project cards */
+/* Text inside cards */
 .project p {
   text-align: center;
   font-size: 18px;
   line-height: 1.5;
+  margin: 12px auto 0;
+  overflow-wrap: anywhere;   /* prevents words from squishing */
+  hyphens: auto;
 }
 
 /* Links */
-a {
-  text-decoration: none;
-  color: purple;
+a { text-decoration: none; color: purple; }
+
+/* ----- Make the Problem Statement full width and roomier ----- */
+#problem {
+  grid-column: 1 / -1;        /* span both columns = big and wide */
+  padding: 20px;
+}
+
+#problem img {
+  aspect-ratio: 16 / 9;       /* wider hero image */
+  max-height: 320px;
+}
+
+#problem p {
+  font-size: 20px;            /* a little larger for readability */
+  line-height: 1.6;
+  max-width: 1100px;          /* long, but not edge-to-edge */
+  margin: 12px auto 0;        /* centered within the big card */
+}
+
+/* ----- Responsive: single column on narrow screens ----- */
+@media (max-width: 850px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  #problem { grid-column: 1; }
 }
 
