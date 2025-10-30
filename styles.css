@@ -14,3 +14,21 @@ h1 {
   padding: 10px;
   border-radius: 10px;
 }
+/* --- Project Card Formatting (Required for PM4) --- */
+.project img {
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
+  border: 2px solid rgb(126, 14, 201); /* you can change the color if you want */
+  display: block;
+}
+
+.project p {
+  text-align: center;
+  margin: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
+}
