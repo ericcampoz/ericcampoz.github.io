@@ -14,29 +14,8 @@ h1 {
   padding: 10px;
   border-radius: 10px;
 }
-/* --- Project Card Formatting (Required for PM4) --- */
-.project img {
-  width: 300px;
-  height: 300px;
-  margin: 10px auto;
-  border: 2px solid rgb(126, 14, 201); /* you can change the color if you want */
-  display: block;
-}
 
-.project p {
-  text-align: center;
-  margin: 15px;
-}
-
-a {
-  text-decoration: none;
-  color: purple;
-}
-.project p {
-  font-size: 20px;
-  line-height: 1.5;
-}
-/* --- Project Section Layout (matches CSCE190 formatting) --- */
+/* ---- PROJECT LAYOUT ---- */
 .projects {
   display: flex;
   flex-wrap: wrap;
@@ -54,19 +33,25 @@ a {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Hover effect (unique touch, looks clean) */
+/* Make the PROBLEM STATEMENT card wider */
+#problem {
+  width: 600px;    /* wider card */
+  max-width: 90%;  /* stays responsive */
+}
+
+/* Hover effect */
 .project:hover {
   transform: scale(1.03);
 }
 
-/* Title alignment */
+/* Title */
 .project h3 {
   text-align: center;
   margin-bottom: 10px;
   color: navy;
 }
 
-/* Image styling (your professor’s required formatting) */
+/* Image (standardized) */
 .project img {
   width: 100%;
   height: 300px;
@@ -77,14 +62,14 @@ a {
   margin: 0 auto;
 }
 
-/* Text inside project card */
+/* Text inside project cards */
 .project p {
   text-align: center;
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Link styling */
+/* Links */
 a {
   text-decoration: none;
   color: purple;
