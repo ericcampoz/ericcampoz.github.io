@@ -143,6 +143,28 @@ body {
 .project.coding p a:hover {
   text-decoration: underline;
 }
+/* === Fix for the 3 additional project cards at the bottom === */
+
+/* Ensure only the PM4 problem card spans full width */
+#problem {
+  grid-column: 1 / -1 !important;
+}
+
+/* Make all other project cards normal-sized again */
+.projects .project:not(#problem) {
+  grid-column: auto;            /* prevents full-width stretch */
+  max-width: 450px;             /* keeps size consistent */
+  margin: 0 auto;               /* centers each card in its grid cell */
+  padding: 16px;                /* matches your card spacing */
+}
+
+/* Adjust their images to match your standard project look */
+.projects .project:not(#problem) img {
+  aspect-ratio: 1 / 1;
+  max-height: 240px;
+  object-fit: cover;
+}
+
 
 
 
