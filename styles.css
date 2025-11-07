@@ -122,5 +122,27 @@ body {
   list-style-type: square;
   margin-left: 20px;
 }
+/* === Extra styling for coding projects (does not change existing cards) === */
+.project.coding {
+  border: 2px solid rgba(126, 14, 201, 0.35); /* subtle purple border like your theme */
+  text-align: center;
+  padding: 18px;
+}
+
+.project.coding h3 {
+  margin-bottom: 6px;
+  color: navy;
+}
+
+.project.coding p a {
+  font-weight: bold;
+  color: purple;
+  text-decoration: none;
+}
+
+.project.coding p a:hover {
+  text-decoration: underline;
+}
+
 
 
